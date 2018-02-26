@@ -1,0 +1,44 @@
+<div class="header"></div>
+
+<div class="container">
+  <div class="content">
+    <form (ngSubmit)="login()"
+          novalidate
+          [formGroup]="loginForm">
+      <md-form-field class="input-tag-wrap">
+        <input class="input-tag"
+               mdInput
+               autofocus
+               formControlName="email"
+               type="email"
+               placeholder="이메일">
+      </md-form-field>
+
+      <div class="alert-danger float-left"
+               *ngIf="formErrors.email">
+        {{formErrors.email}}
+      </div>
+
+
+      <md-form-field class="input-tag-wrap">
+        <input class="input-tag"
+               mdInput
+               formControlName="password"
+               type="password"
+               placeholder="비밀번호">
+      </md-form-field>
+
+      <div class="alert-danger float-left"
+               *ngIf="formErrors.password">
+        {{formErrors.password}}
+      </div>
+
+      <button class="button-tag"
+              md-raised-button
+              [disabled]="!loginForm.valid"
+              type="submit">
+        로그인
+      </button>
+    </form>
+  </div>
+</div>

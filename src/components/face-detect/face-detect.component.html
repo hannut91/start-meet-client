@@ -1,0 +1,16 @@
+<div class="header">
+  {{meeting.name}} <span class="date">{{meeting.startTime}}</span>
+</div>
+
+<div class="scroll-content">
+  <video autoplay #video></video>
+  <canvas style="display:none;"></canvas>
+
+  <button (click)="openFaceSelectForm()"
+          class="assign-btn"
+          type="button">
+    좌석배정받기
+  </button>
+
+  <div class="seat-num">{{seatNumber}}번</div>
+</div>

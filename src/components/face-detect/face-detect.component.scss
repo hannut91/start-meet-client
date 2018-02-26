@@ -1,0 +1,62 @@
+@import '../../shared/styles/setting.scss';
+
+.header {
+  z-index:5;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  height: 64px;
+  padding-left: 16px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  background-color: map_get($md-grey,100);
+  color:map_get($md-grey,600);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+
+  .date {
+    font-size: 14px;
+    margin-left: 16px;
+  }
+}
+
+.scroll-content {
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 32px;
+  top: 64px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+
+  video {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
+  }
+
+  .assign-btn {
+    margin-top: 32px;
+    display: block;
+    margin-left : auto;
+    margin-right:auto;
+    font-size: 30px;
+    color:white;
+    background-color: #EF6C00;
+    border: 0px;
+    padding: 4px;
+    border-radius: 20px;
+    width: 200px;
+    hight: 50px;
+  }
+
+  .seat-num{
+    margin-top: 16px;
+    font-size:68px;
+    font-weight:bold;
+    text-align: center;
+  }
+}

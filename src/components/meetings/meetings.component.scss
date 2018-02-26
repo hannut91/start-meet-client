@@ -1,0 +1,62 @@
+@import '../../shared/styles/setting';
+
+.header {
+  z-index:5;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  height: 64px;
+  padding-left: 16px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: map_get($md-grey,100);
+  color:map_get($md-grey,600);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  padding-right: 16px;
+
+  .menu-button {
+    background-color: map_get($md-cyan,500);
+    color:white;
+    margin-right: 16px;
+
+    .md-24 {
+    }
+  }
+}
+
+.scroll-content {
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+  padding-left: 24px;
+  padding-top: 24px;
+  top: 64px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+
+    .meeting {
+      box-sizing: border-box;
+      margin-right: 24px;
+      margin-bottom: 24px;
+      width: calc(33.33% - 24px);
+      cursor: pointer;
+
+      &:hover {
+        background-color: #eeeeee;
+      }
+
+      .btn-container {
+        text-align: right;
+      }
+    }
+  }
+}

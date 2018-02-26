@@ -1,0 +1,46 @@
+<form [formGroup]="meetingForm"
+      (ngSubmit)="type === formType.Create ? submit() : update()"
+      novalidate>
+  <h3>
+    미팅 {{ title }}
+  </h3>
+
+  <md-form-field class="input-wrap">
+    <input type="text"
+           formControlName="name"
+           placeholder="미팅명을 입력해주세요."
+           mdInput>
+
+    <div class="error-message"
+         *ngIf="formErrors.name">
+      {{formErrors.name}}
+    </div>
+  </md-form-field>
+
+  <md-form-field class="input-wrap">
+    <input type="datetime-local"
+           formControlName="startTime"
+           placeholder="미팅시간을 입력해주세요."
+           mdInput>
+
+    <div class="error-message"
+         *ngIf="formErrors.startTime">
+      {{formErrors.startTime}}
+    </div>
+  </md-form-field>
+
+  <div class="btn-container">
+    <button md-raised-button
+            (click)="mdDialogRef.close()"
+            type="button">
+      취소
+    </button>
+
+    <button md-raised-button
+            [disabled]="!meetingForm.valid"
+            color="primary"
+            type="submit">
+      확인
+    </button>
+  </div>
+</form>

@@ -1,0 +1,22 @@
+<div>
+  <div class="canvas-container">
+    <img [src]="img"
+         #faceImgRef
+         class="img-box">
+
+    <div class="box"
+         [style.height]="face.Height*100 + '%'"
+         [style.left]="face.Left*100 + '%'"
+         [style.top]="face.Top*100 + '%'"
+         [style.width]="face.Width*100 + '%'">
+    </div>
+  </div>
+
+  <div class="btn-container">
+    <button (click)="mdDialogRef.close()"
+            md-raised-button
+            color="primary">
+      닫기
+    </button>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+@import '../../shared/styles/setting.scss';
+
+:host {
+  width: 100%;
+}
+
+.header {
+  height: 40vh;
+  background-color: map_get($md-blue-grey, 500);
+}
+
+.container{
+  margin-top: -35vh;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  @media #{$phone}{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .content{
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow:0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+    padding: 40px 28px;
+
+    .input-tag-wrap {
+      width: 100%;
+    }
+
+    @media #{$phone}{
+      width: calc(100% - 16px);
+    }
+    @media #{$pc}{
+      width: calc(50% - 16px);
+    }
+
+    .alert-danger {
+      color:red;
+    }
+    .button-tag{
+      margin-top: 16px;
+      width: 100%;
+      font-size:16px;
+      height:34px;
+      background-color: map_get($md-blue-grey, 500);
+      color:white;
+    }
+    [disabled].button-tag{
+      background-color:map_get($md-grey,500);
+    }
+    .form-error{
+      color:map_get($md-red,500);
+    }
+  }
+}

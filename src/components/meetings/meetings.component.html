@@ -1,0 +1,56 @@
+<div class="header">
+  미팅목록
+
+  <button (click)="logout()"
+          type="button"
+          md-raised-button>
+    로그아웃
+  </button>
+</div>
+
+<div class="scroll-content">
+  <div class="btn-container">
+    <button (click)="openMeetingForm(formType.Create)"
+            md-raised-button
+            type="button"
+            color="primary">
+      추가하기
+    </button>
+  </div>
+
+  <div class="card-container">
+    <md-card class="meeting"
+             (click)="goToFaceDetect(meeting._id)"
+             *ngFor="let meeting of meetings">
+      <md-card-content>
+        <div class="btn-container">
+          <button md-mini-fab
+                  [mdMenuTriggerFor]="appMenu"
+                  (click)="click2($event)"
+                  color="primary">
+            <i class="material-icons">settings</i>
+          </button>
+
+          <md-menu #appMenu="mdMenu">
+            <button md-menu-item
+                    (click)="openMeetingForm(formType.Update, meeting._id)"
+                    type="button">
+              수정하기
+            </button>
+            <button md-menu-item
+                    (click)="removeMeeting(meeting._id)"
+                    type="button">
+              삭제하기
+            </button>
+          </md-menu>
+        </div>
+
+        <div>
+          미팅이름 : {{ meeting.name }}<br>
+          일시 :  {{ meeting.startTime }}<br>
+          참여자 수 : {{ meeting.meetingIssues.length }}
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

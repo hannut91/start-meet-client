@@ -1,0 +1,19 @@
+.input-wrap {
+  width: 100%;
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    bottom: -26px
+  }
+
+  &:not(:first-child){
+    margin-top: 16px;
+  }
+}
+
+.btn-container {
+  margin-top: 24px;
+  text-align: right;
+}
